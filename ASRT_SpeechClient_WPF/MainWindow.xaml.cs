@@ -21,13 +21,14 @@ namespace ASRT_SpeechClient_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        SpeechRecognizer asr = new SpeechRecognizer();
+        SpeechRecognizer asr;
 
         public MainWindow()
         {
             InitializeComponent();
 
             MessageBox.Visibility = Visibility.Collapsed;
+            asr = new SpeechRecognizer();
             asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
         }
         
@@ -43,11 +44,15 @@ namespace ASRT_SpeechClient_WPF
             MessageBox.Visibility = Visibility.Collapsed;
         }
 
-        private async void btn_save_file_Click(object sender, RoutedEventArgs e)
+        private async void btn_change_url_Click(object sender, RoutedEventArgs e)
         {
-            text_note.Text += await asr.RecogniteFromFile("1.wav");
-            
-            text_note.ScrollToEnd();
+            //text_note.Text += await asr.RecogniteFromFile("1.wav");
+            //text_note.ScrollToEnd();
+            if (!asr.isRecognizing)
+            {
+                asr = new SpeechRecognizer(textbox_url.Text, "qwertasd");
+                asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
+            }
         }
 
         private void SpeechRecognizer_OnReceiveText(object sender, string text)

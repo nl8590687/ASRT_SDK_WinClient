@@ -25,6 +25,13 @@ namespace ailemon.asrt
         DispatcherTimer timer;//定义定时器
         string filepath = "";
 
+        public bool isRecognizing
+        {
+            get { return _is_recognizing; }
+        }
+
+        private bool _is_recognizing = false;
+
         public SpeechRecognizer(string url_server = "http://127.0.0.1:20000/", string token_client = "qwertasd")
         {
             url = url_server;
@@ -43,6 +50,7 @@ namespace ailemon.asrt
             timer.Tick += Timer_Tick;//每6秒触发这个事件，以刷新指针
             timer.Start();
 
+            _is_recognizing = true;
             this._audioRecorder.Record();
         }
 
@@ -73,6 +81,7 @@ namespace ailemon.asrt
             
             // 识别完成后删除文件
             DelWavFile(filename);
+            _is_recognizing = false;
 
         }
 

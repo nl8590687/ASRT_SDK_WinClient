@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="ASRT_SpeechClient_WPF" Height="800" Width="1200" MinWidth="1200" MinHeight="800" Margin="0" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF043CF7">
-        <TextBox x:Name="text_note" HorizontalAlignment="Stretch" Margin="0,0,0,200" Text="" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" BorderThickness="0,0,0,2"  ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Microsoft YaHei" FontSize="108" Foreground="White" Background="#66FFFFFF" FontWeight="Bold"/>
+        <TextBox x:Name="text_note" HorizontalAlignment="Stretch" Margin="0,50,0,200" Text="" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" BorderThickness="0,0,0,2"  ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Microsoft YaHei" FontSize="108" Foreground="White" Background="#66FFFFFF" FontWeight="Bold"/>
 
         <Button x:Name="btn_start_speech_input" Content="开始语音输入" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="100,0,0,50" Width="300" Height="120" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_start_speech_input_Click"/>
-        <Button x:Name="btn_end_speech_input" Content="停止语音输入" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50" Width="300" Height="120" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_end_speech_input_Click"/>
-        <Button x:Name="btn_save_file" Content="保存文件" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,50" Width="300" Height="120" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_save_file_Click"/>
+        <Button x:Name="btn_end_speech_input" Content="停止语音输入" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,50" Width="300" Height="120" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_end_speech_input_Click"/>
+        <Button x:Name="btn_change_url" Content="修改URL" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,649" Width="200" Height="50" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_change_url_Click"/>
         <TextBox x:Name="MessageBox" HorizontalAlignment="Center" Height="100" Text=" 正在识别... " VerticalAlignment="Bottom" Width="400" Background="#66FFFFFF" FontSize="70" Foreground="White" FontFamily="Microsoft YaHei" IsReadOnly="True" Margin="0,0,0,180"/>
+        <TextBox x:Name="textbox_url" Height="50" Margin="0,0,200,0" TextWrapping="Wrap" Text="http://127.0.0.1:20000/" VerticalAlignment="Top" FontSize="36" Background="#7FFFFFFF" Foreground="White"/>
 
     </Grid>
 </Window>
