@@ -23,12 +23,26 @@ namespace ASRT_SpeechClient_WPF
     {
         SpeechRecognizer asr;
 
+        string token = "qwertasd";
+        string filename_conf = "conf.txt";
+
         public MainWindow()
         {
             InitializeComponent();
 
             MessageBox.Visibility = Visibility.Collapsed;
-            asr = new SpeechRecognizer();
+
+            
+            string url = "http://127.0.0.1:20000/";
+            
+            if (System.IO.File.Exists(filename_conf))
+            {
+                //url = System.IO.File.ReadAllText(filename_url);
+                string[] conf_lines = System.IO.File.ReadAllLines(filename_conf);
+                url = conf_lines[0];
+                token = conf_lines[1];
+            }
+            asr = new SpeechRecognizer(url, token);
             asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
         }
         
@@ -50,8 +64,14 @@ namespace ASRT_SpeechClient_WPF
             //text_note.ScrollToEnd();
             if (!asr.isRecognizing)
             {
-                asr = new SpeechRecognizer(textbox_url.Text, "qwertasd");
+                string url_new = textbox_url.Text;
+                asr = new SpeechRecognizer(url_new, token);
                 asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
+
+                if (!System.IO.File.Exists(filename_conf))
+                {
+                    System.IO.File.WriteAllText(filename_conf, url_new + "\n" + token);
+                }
             }
         }
 

@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:ASRT_SpeechClient_WPF"
         mc:Ignorable="d"
         Title="ASRT_SpeechClient_WPF" Height="700" Width="1000" MinWidth="900" MinHeight="600" Margin="0" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF043CF7">
-        <TextBox x:Name="text_note" HorizontalAlignment="Stretch" Margin="0,50,0,160" Text="" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" BorderThickness="0,0,0,2"  ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Microsoft YaHei" FontSize="108" Foreground="White" Background="#66FFFFFF" FontWeight="Bold"/>
+    <Grid Background="White">
+        <TextBox x:Name="text_note" HorizontalAlignment="Stretch" Margin="0,50,0,160" Text="" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" BorderThickness="0,0,0,2"  ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Microsoft YaHei" FontSize="108" Foreground="Black" Background="#66FFFFFF" FontWeight="Bold"  BorderBrush="Black"/>
 
-        <Button x:Name="btn_start_speech_input" Content="开始语音输入" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="100,0,0,50" Width="260" Height="80" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_start_speech_input_Click"/>
-        <Button x:Name="btn_end_speech_input" Content="停止语音输入" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,50" Width="260" Height="80" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_end_speech_input_Click"/>
-        <Button x:Name="btn_change_url" Content="修改URL" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" Width="200" Height="50" Foreground="White" FontSize="36" Background="#99DDDDDD" Click="btn_change_url_Click"/>
-        <TextBox x:Name="MessageBox" HorizontalAlignment="Center" Height="100" Text=" 正在识别... " VerticalAlignment="Bottom" Width="400" Background="#66FFFFFF" FontSize="70" Foreground="White" FontFamily="Microsoft YaHei" IsReadOnly="True" Margin="0,0,0,140"/>
-        <TextBox x:Name="textbox_url" Height="50" Margin="0,0,200,0" TextWrapping="Wrap" Text="http://127.0.0.1:20000/" VerticalAlignment="Top" FontSize="36" Background="#7FFFFFFF" Foreground="White"/>
+        <Button x:Name="btn_start_speech_input" Content="开始语音输入" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="100,0,0,50" Width="260" Height="80" Foreground="Black" FontSize="36" Background="#99DDDDDD" Click="btn_start_speech_input_Click" BorderBrush="Black" BorderThickness="2" />
+        <Button x:Name="btn_end_speech_input" Content="停止语音输入" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,50" Width="260" Height="80" Foreground="Black" FontSize="36" Background="#99DDDDDD" Click="btn_end_speech_input_Click" BorderBrush="Black" BorderThickness="2"/>
+        <Button x:Name="btn_change_url" Content="修改URL" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" Width="200" Height="50" Foreground="Black" FontSize="36" Background="#99DDDDDD" Click="btn_change_url_Click" BorderBrush="Black" BorderThickness="2"/>
+        <TextBox x:Name="MessageBox" HorizontalAlignment="Center" Height="100" Text=" 正在识别... " VerticalAlignment="Bottom" Width="400" Background="#66FFFFFF" FontSize="70" Foreground="Black" FontFamily="Microsoft YaHei" IsReadOnly="True" Margin="0,0,0,140"  BorderBrush="Black" BorderThickness="2"/>
+        <TextBox x:Name="textbox_url" Height="50" Margin="0,0,200,0" TextWrapping="Wrap" Text="http://127.0.0.1:20000/" VerticalAlignment="Top" FontSize="36" Background="#7FFFFFFF" Foreground="Black"  BorderBrush="Black" BorderThickness="2,2,0,2"/>
 
     </Grid>
 </Window>
