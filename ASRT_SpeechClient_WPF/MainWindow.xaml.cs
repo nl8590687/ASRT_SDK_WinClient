@@ -41,6 +41,7 @@ namespace ASRT_SpeechClient_WPF
                 string[] conf_lines = System.IO.File.ReadAllLines(filename_conf);
                 url = conf_lines[0];
                 token = conf_lines[1];
+                textbox_url.Text = url;
             }
             asr = new SpeechRecognizer(url, token);
             asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
@@ -68,10 +69,8 @@ namespace ASRT_SpeechClient_WPF
                 asr = new SpeechRecognizer(url_new, token);
                 asr.OnReceiveText += SpeechRecognizer_OnReceiveText;
 
-                if (!System.IO.File.Exists(filename_conf))
-                {
-                    System.IO.File.WriteAllText(filename_conf, url_new + "\n" + token);
-                }
+                System.IO.File.WriteAllText(filename_conf, url_new + "\n" + token);
+                
             }
         }
 
