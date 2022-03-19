@@ -7,7 +7,7 @@ using System.IO;
 using System.Net;
 using System.Windows.Threading;
 
-namespace ailemon.asrt
+namespace ailemon.Compat.asrt
 {
     public class SpeechRecognizer
     {
