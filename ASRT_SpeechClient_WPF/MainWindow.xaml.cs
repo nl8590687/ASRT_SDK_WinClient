@@ -74,6 +74,7 @@ namespace ASRT_SpeechClient_WPF
                 host = config_arr[1];
                 port = config_arr[2];
                 _clientProxy = new AsrtClientProxy(host, port, protocol);
+                _clientProxy.SetRecorderDevice(0);
                 _clientProxy.OnReceiveText += SpeechRecognizer_OnReceiveText;
 
                 System.IO.File.WriteAllText(filename_conf, protocol + "\n" + host + "\n" + port);
