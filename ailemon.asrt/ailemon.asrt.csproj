@@ -80,13 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsrtClientProxy.cs" />
-    <Compile Include="AudioRecorder.cs" />
     <Compile Include="BaseSpeechRecognizer.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="HttpSpeechRecognizer.cs" />
     <Compile Include="NAudioRecorder.cs" />
     <Compile Include="SDK.cs" />
-    <Compile Include="SpeechRecognizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
