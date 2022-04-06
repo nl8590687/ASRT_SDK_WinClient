@@ -13,16 +13,5 @@ namespace ASRT_SpeechClient_WPF
     /// </summary>
     public partial class App : Application
     {
-        /*
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            
-            SplashScreen s = new SplashScreen("SplashScreen.png");
-            s.Show(false);
-            s.Close(new TimeSpan(0, 0, 3));
-
-            base.OnStartup(e);
-        }
-        */
     }
 }

@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("ASRT_SpeechClient_WPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ailemon.me")]
+[assembly: AssemblyCompany("ailemon.net")]
 [assembly: AssemblyProduct("ASRT_SpeechClient_WPF")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("ailemon")]
 [assembly: AssemblyCulture("")]
 
