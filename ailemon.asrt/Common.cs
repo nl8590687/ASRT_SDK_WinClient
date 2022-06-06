@@ -12,12 +12,22 @@ namespace Ailemon.Asrt
 {
     static class Common
     {
+        private static Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+        private static string versionText = string.Format("{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision.ToString("0000"));
+        private static string userAgentName = "ASRT-SDK-Client";
+        private static string userAgentVersionInfo = string.Format("{0}-csharp", versionText);
+
         public static async Task<string> HttpPostAsync(string url, string contentType, string body)
         {
             HttpClient client = new HttpClient();
             HttpContent content = new StringContent(body);
+
             content.Headers.Remove("Content-Type");
             content.Headers.Add("Content-Type", contentType);
+            client.DefaultRequestHeaders.UserAgent.Clear();
+            var userAgentObj = new System.Net.Http.Headers.ProductInfoHeaderValue(new System.Net.Http.Headers.ProductHeaderValue(userAgentName, userAgentVersionInfo));
+            client.DefaultRequestHeaders.UserAgent.Add(userAgentObj);
+
             var response = await client.PostAsync(url, content);
             var rspContent = await response.Content.ReadAsStringAsync();
             return rspContent;

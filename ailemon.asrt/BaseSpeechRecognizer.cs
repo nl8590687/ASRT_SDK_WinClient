@@ -12,9 +12,9 @@ namespace Ailemon.Asrt
     /// </summary>
     public interface ISpeechRecognizer
     {
-        Task<object> RecogniteAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
-        Task<object> RecogniteSpeechAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
-        Task<object> RecogniteLanguageAsync(string[] sequencePinyin);
+        Task<AsrtApiResponse> RecogniteAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
+        Task<AsrtApiResponse> RecogniteSpeechAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
+        Task<AsrtApiResponse> RecogniteLanguageAsync(string[] sequencePinyin);
         Task<object> RecogniteFile(string filename);
     }
 
@@ -45,9 +45,9 @@ namespace Ailemon.Asrt
             this._protocol = protocol;
         }
 
-        public abstract Task<object> RecogniteAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
-        public abstract Task<object> RecogniteSpeechAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
-        public abstract Task<object> RecogniteLanguageAsync(string[] sequencePinyin);
+        public abstract Task<AsrtApiResponse> RecogniteAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
+        public abstract Task<AsrtApiResponse> RecogniteSpeechAsync(byte[] wavData, int sampleRate, int channels, int byteWidth);
+        public abstract Task<AsrtApiResponse> RecogniteLanguageAsync(string[] sequencePinyin);
 
         /// <summary>
         /// 调用ASRT进行WAVE音频文件的语音识别
