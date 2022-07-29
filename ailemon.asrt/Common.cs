@@ -268,6 +268,39 @@ namespace Ailemon.Asrt
                 return samples_base64;
             }
         }
+
+        public byte[] ByteSamples
+        {
+            get
+            {
+                return _samples;
+            }
+        }
+
+        public int SampleRate
+        {
+            get
+            {
+                return _sampleRate;
+            }
+        }
+
+        public int Channels
+        {
+            get
+            {
+                return _channels;
+            }
+        }
+
+        public int ByteWidth
+        {
+            get
+            {
+                return _byteWidth;
+            }
+        }
+
         public AsrtApiSpeechRequest(byte[] samples, int sampleRate, int channels, int byteWidth)
         {
             _samples = samples;

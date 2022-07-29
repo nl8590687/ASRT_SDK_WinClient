@@ -25,6 +25,10 @@ namespace Ailemon.Asrt
             {
                 return new HttpSpeechRecognizer(host, port, protocol);
             }
+            else if(protocol.ToLower() == "grpc" || protocol.ToLower() == "grpcs")
+            {
+                return new GrpcSpeechRecognizer(host, port, protocol);
+            }
             return null;
         }
 
